@@ -109,19 +109,20 @@ public class ArraySet<E> implements List<E>, Set<E>
 		return _list.lastIndexOf(o);
 	}
 	@Override
-	public ListIterator<E> listIterator() {
-		_list.listIterator();
-		return null;
+	public ListIterator<E> listIterator() {	
+		return _list.listIterator();
+		
 	}
 	@Override
 	public ListIterator<E> listIterator(int index) {
-		_list.listIterator(index);
-		return null;
+		// TODO Auto-generated method stub
+		return _list.listIterator(index);
+		
 	}
 	@Override
 	public List<E> subList(int fromIndex, int toIndex) {
-		_list.subList(fromIndex, toIndex);
-		return null;
+		
+		return _list.subList(fromIndex, toIndex);
 	}
 	@Override
 	public Spliterator<E> spliterator() {
