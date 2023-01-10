@@ -42,14 +42,23 @@ public class ArraySet<E> implements List<E>, Set<E>
 		return null;
 	}
 	@Override
-	public <T> T[] toArray(T[] a) {
-		// TODO Auto-generated method stub
-		return null;
+	public E[] toArray(E[] a) {
+		
+		E[] es = (E[]) new Object[_list.size()];
+		
+		E[] array = es;
+		
+		for(int i = 0; i < _list.size(); i++) {
+			
+			array[i] = _list.get(i);
+			
+		}
+		return array;
 	}
 	@Override
 	public boolean add(E e) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		_list.add(e);
 	}
 	@Override
 	public boolean remove(Object o) {
