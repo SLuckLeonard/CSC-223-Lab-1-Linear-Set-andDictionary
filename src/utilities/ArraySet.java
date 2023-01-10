@@ -18,6 +18,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
+		// hi
 		return 0;
 	}
 	@Override
