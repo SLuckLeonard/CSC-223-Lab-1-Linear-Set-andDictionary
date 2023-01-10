@@ -19,7 +19,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 	public int size() {
 		// TODO Auto-generated method stub
 		// hi
-		return 0;
+		return -1;
 	}
 	@Override
 	public boolean isEmpty() {
