@@ -18,7 +18,6 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
 		return _list.size();
 	}
 	@Override
@@ -33,8 +32,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return _list.iterator();
 	}
 	@Override
 	public Object[] toArray() {
@@ -48,68 +46,62 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public boolean add(E e) {
-		// TODO Auto-generated method stub
-		return false;
+		_list.add(e);
+		return true;
 	}
 	@Override
 	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+		_list.remove(o);
+		return true;
 	}
 	@Override
 	public boolean containsAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
+		_list.containsAll(c);
+		return true;
 	}
 	@Override
 	public boolean addAll(Collection<? extends E> c) {
-		// TODO Auto-generated method stub
-		return false;
+		_list.addAll(c);
+		return true;
 	}
 	@Override
 	public boolean addAll(int index, Collection<? extends E> c) {
-		// TODO Auto-generated method stub
-		return false;
+		_list.addAll(index, c);
+		return true;
 	}
 	@Override
 	public boolean removeAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
+		_list.removeAll(c);
+		return true;
 	}
 	@Override
 	public boolean retainAll(Collection<?> c) {
-		// TODO Auto-generated method stub
-		return false;
+		_list.retainAll(c);
+		return true;
 	}
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-		
+		_list.clear();
 	}
 	@Override
 	public E get(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		return _list.get(index);
 	}
 	@Override
 	public E set(int index, E element) {
-		// TODO Auto-generated method stub
-		return null;
+		return _list.set(index, element);
 	}
 	@Override
 	public void add(int index, E element) {
-		// TODO Auto-generated method stub
-		
+		_list.add(index, element);
 	}
 	@Override
 	public E remove(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		return _list.remove(index);
 	}
 	@Override
 	public int indexOf(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+		return _list.indexOf(o);
 	}
 	@Override
 	public int lastIndexOf(Object o) {
