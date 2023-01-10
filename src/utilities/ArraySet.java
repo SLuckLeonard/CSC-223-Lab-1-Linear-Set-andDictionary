@@ -40,18 +40,10 @@ public class ArraySet<E> implements List<E>, Set<E>
 		return null;
 	}
 	@Override
-	public E[] toArray(E[] a) {
-		
-		E[] es = (E[]) new Object[_list.size()];
-		
-		E[] array = es;
-		
-		for(int i = 0; i < _list.size(); i++) {
-			
-			array[i] = _list.get(i);
-			
-		}
-		return array;
+	public  <E> E[] toArray(E[] a) {
+
+	return _list.toArray(a);
+	
 	}
 	@Override
 	public boolean add(E e) {
