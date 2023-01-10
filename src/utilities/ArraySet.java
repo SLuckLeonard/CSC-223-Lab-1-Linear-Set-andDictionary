@@ -29,13 +29,13 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+
+		return _list.isEmpty();
 	}
 	@Override
 	public boolean contains(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return _list.contains(o);
 	}
 	@Override
 	public Iterator<E> iterator() {
