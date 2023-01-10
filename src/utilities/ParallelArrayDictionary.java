@@ -39,13 +39,13 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public Value get(Object key) {
-		
-		return null;
+		if (!containsKey(key)) return null;
+		return _Values.get(_Keys.indexOf(key));
 	}
 
 	@Override
 	public Value put(Key key, Value value) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -63,7 +63,8 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		_Keys.clear();
+		_Values.clear();
 		
 	}
 
