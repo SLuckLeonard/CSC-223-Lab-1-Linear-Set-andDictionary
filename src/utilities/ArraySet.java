@@ -114,13 +114,10 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public int lastIndexOf(Object o) {
-		// TODO Auto-generated method stub
-		//hi
-		return 0;
+		return _list.lastIndexOf(o);
 	}
 	@Override
 	public ListIterator<E> listIterator() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
