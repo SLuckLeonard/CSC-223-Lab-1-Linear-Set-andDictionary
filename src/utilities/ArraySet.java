@@ -109,8 +109,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 		return _list.lastIndexOf(o);
 	}
 	@Override
-	public ListIterator<E> listIterator() {
-		
+	public ListIterator<E> listIterator() {	
 		return _list.listIterator();
 		
 	}
@@ -127,7 +126,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public Spliterator<E> spliterator() {
-		// TODO Auto-generated method stub
+		_list.spliterator();
 		return List.super.spliterator();
 	}
 
