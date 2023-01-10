@@ -8,6 +8,7 @@ import java.util.Set;
 public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 {
 	
+	
 	protected ArrayList<Key> _Keys;
 	
 	protected ArrayList<Value> _Values;
@@ -71,7 +72,11 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public void putAll(Map<? extends Key, ? extends Value> m) {
-		// TODO Auto-generated method stub
+	
+		for(int i = 0; i < m.size(); i++) {
+			
+			
+		}
 		
 	}
 
@@ -86,8 +91,17 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public Set<Key> keySet() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ArraySet<Key> keySet = new ArraySet<Key>();
+		
+		for(Key key: _Keys) {
+			
+			keySet.add(key);
+			
+		}
+		
+		return keySet;
+		
 	}
 
 	@Override
