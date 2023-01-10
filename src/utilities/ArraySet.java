@@ -11,6 +11,7 @@ import java.util.Spliterator;
 public class ArraySet<E> implements List<E>, Set<E>
 {
 
+	
 	protected ArrayList<E> _list;
 	{
 		// TODO Auto-generated constructor stub
@@ -18,8 +19,13 @@ public class ArraySet<E> implements List<E>, Set<E>
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
+<<<<<<< Updated upstream
 		// hi
 		return -1;
+=======
+		//hi
+		return _list.size();
+>>>>>>> Stashed changes
 	}
 	@Override
 	public boolean isEmpty() {
