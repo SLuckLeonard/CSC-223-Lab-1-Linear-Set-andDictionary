@@ -110,21 +110,22 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public ListIterator<E> listIterator() {
+		_list.listIterator();
 		return null;
 	}
 	@Override
 	public ListIterator<E> listIterator(int index) {
-		// TODO Auto-generated method stub
+		_list.listIterator(index);
 		return null;
 	}
 	@Override
 	public List<E> subList(int fromIndex, int toIndex) {
-		// TODO Auto-generated method stub
+		_list.subList(fromIndex, toIndex);
 		return null;
 	}
 	@Override
 	public Spliterator<E> spliterator() {
-		// TODO Auto-generated method stub
+		_list.spliterator();
 		return List.super.spliterator();
 	}
 
