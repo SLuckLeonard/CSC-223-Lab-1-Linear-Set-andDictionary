@@ -115,6 +115,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 	@Override
 	public int lastIndexOf(Object o) {
 		// TODO Auto-generated method stub
+		//hi
 		return 0;
 	}
 	@Override
