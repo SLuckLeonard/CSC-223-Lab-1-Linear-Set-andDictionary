@@ -39,8 +39,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
+		return _list.toArray();
 	}
 	@Override
 	public  <E> E[] toArray(E[] a) {
