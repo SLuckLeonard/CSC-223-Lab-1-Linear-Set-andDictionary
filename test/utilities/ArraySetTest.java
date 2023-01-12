@@ -8,7 +8,7 @@ class ArraySetTest {
 
 	@Test
 	void sizeEmptyTest() {
-
+//push moment
 		ArraySet<Double> list = new ArraySet<Double>();
 
 		assertEquals(0, list.size());
