@@ -15,7 +15,11 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	public ParallelArrayDictionary()
 	{
-		// TODO Auto-generated constructor stub
+	
+		_Keys = new ArrayList<Key>();
+		
+		_Values = new ArrayList<Value>();
+		
 	}
 
 	@Override
@@ -107,13 +111,14 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public Collection<Value> values() {
+		
 		return _Values;
 	}
 
 	@Override
 	public Set<Entry<Key, Value>> entrySet() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return this.entrySet();
 	}
 
 }
