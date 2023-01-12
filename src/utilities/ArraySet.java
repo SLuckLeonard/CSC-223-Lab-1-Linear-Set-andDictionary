@@ -13,8 +13,11 @@ public class ArraySet<E> implements List<E>, Set<E>
 
 	
 	protected ArrayList<E> _list;
-	{
-		// TODO Auto-generated constructor stub
+	
+	public ArraySet(){
+		
+		_list = new ArrayList<E>();
+		
 	}
 	@Override
 	public int size() {
