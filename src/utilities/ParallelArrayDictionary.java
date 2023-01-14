@@ -7,20 +7,29 @@ import java.util.Set;
 
 public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 {
-	
-	
-	protected ArrayList<Key> _Keys;
-	
+
+
+	protected ArraySet<Key> _Keys;
+
 	protected ArrayList<Value> _Values;
 
-	public ParallelArrayDictionary()
-	{
-	
-		_Keys = new ArrayList<Key>();
-		
+
+	public ParallelArrayDictionary(ArraySet<Key> keys, ArrayList<Value> values) {
+
+		_Keys = new ArraySet<Key>();
+
 		_Values = new ArrayList<Value>();
-		
+
+		for(int i = 0; i < keys.size(); i++) {
+
+			this.put(keys.get(i), values.get(i));
+		}
+
 	}
+	
+	public ParallelArrayDictionary()
+	
+	{ this(new ArraySet<Key>(), new ArrayList<Value>()); }
 
 	@Override
 	public int size() {
@@ -50,28 +59,28 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public Value put(Key key, Value value) {
-		
+
 		if(_Keys.contains(key)) return null;
-		
+
 		_Keys.add(key);
-		
+
 		_Values.add(value);
-		
+
 		return value;
-		
+
 	}
 
 	@Override
 	public Value remove(Object key) {
-		
+
 		_Keys.remove(key);
-		
+
 		Value temp = _Values.get(_Keys.indexOf(key));
-		
+
 		_Values.remove(_Keys.indexOf(key));
-		
+
 		return temp;
-		
+
 	}
 
 	@Override
@@ -82,36 +91,36 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 			put(e.getKey(),e.getValue());
 
 		}
-		
+
 	}
 
 	@Override
 	public void clear() {
-		
+
 		_Keys.clear();
-		
+
 		_Values.clear();
-		
+
 	}
 
 	@Override
 	public Set<Key> keySet() {
-		
+
 		ArraySet<Key> keySet = new ArraySet<Key>();
-		
+
 		for(Key key: _Keys) {
-			
+
 			keySet.add(key);
-			
+
 		}
-		
+
 		return keySet;
-		
+
 	}
 
 	@Override
 	public Collection<Value> values() {
-		
+
 		return _Values;
 	}
 

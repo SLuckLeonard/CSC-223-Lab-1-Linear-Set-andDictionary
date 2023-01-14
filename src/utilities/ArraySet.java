@@ -19,6 +19,18 @@ public class ArraySet<E> implements List<E>, Set<E>
 		_list = new ArrayList<E>();
 		
 	}
+	
+	public ArraySet(Collection<E> collection) {
+		
+		this();
+		
+		for(E item : collection) {
+			
+			_list.add(item);
+			
+		}
+		
+	}
 	@Override
 	public int size() {
 		return _list.size();
@@ -128,8 +140,9 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public Spliterator<E> spliterator() {
-		_list.spliterator();
-		return List.super.spliterator();
+		
+		return _list.spliterator();
+		
 	}
 
 }

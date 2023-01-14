@@ -7,8 +7,13 @@ import org.junit.jupiter.api.Test;
 class ParallelArrayDictionaryTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testSizeEmpty() {
+		
+		ParallelArrayDictionary<Integer, Double> dict = 
+		new ParallelArrayDictionary<Integer, Double>();
+		
+		assertEquals(0, dict.size());
+		
 	}
 
 }
