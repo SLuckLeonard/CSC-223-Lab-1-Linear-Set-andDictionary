@@ -2,6 +2,11 @@ package utilities;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
+import java.util.Dictionary;
+import java.util.Hashtable;
+
 import org.junit.jupiter.api.Test;
 
 class ParallelArrayDictionaryTest {
@@ -322,8 +327,23 @@ class ParallelArrayDictionaryTest {
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
 		
-	
+		Hashtable<Integer, Double> doct = new Hashtable<Integer, Double>();
+		
+		for(int i = 0; i < 100; i++) {
+			
+			doct.put(i, i + 0.0);
+			
+		}
+		
+		dict.putAll(doct);
+		
+		for(int i = 0; i < 100; i++) {
+			
+			assertTrue(dict.containsKey(i));
+			
+			assertTrue(dict.containsValue(i + 0.0));
+			
+		}
 	}
-
 
 }
