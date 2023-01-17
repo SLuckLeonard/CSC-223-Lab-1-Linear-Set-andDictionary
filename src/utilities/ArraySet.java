@@ -1,3 +1,11 @@
+/**
+* Creates an ArraySet with all of the expected implementations for an ArraySet
+*
+* <p>Bugs: none known
+*
+* @author Sam Luck-Leonard and Mason Taylor
+* @date 1/17/2023
+*/
 package utilities;
 
 import java.util.ArrayList;

@@ -1,3 +1,11 @@
+/**
+* Creates a Parallel Array Dictionary with the fully implemented dictionary interface
+*
+* <p>Bugs: none known
+*
+* @author Sam Luck-Leonard and Mason Taylor
+* @date 1/17/2023
+*/
 package utilities;
 
 import java.util.ArrayList;
@@ -15,7 +23,7 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 
 	public ParallelArrayDictionary(ArraySet<Key> keys, ArrayList<Value> values) {
-
+		//constructor 
 		_Keys = new ArraySet<Key>();
 
 		_Values = new ArrayList<Value>();
@@ -105,7 +113,7 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public Set<Key> keySet() {
-
+		//creating a keySet of keys from _Keys to return
 		ArraySet<Key> keySet = new ArraySet<Key>();
 
 		for(Key key: _Keys) {

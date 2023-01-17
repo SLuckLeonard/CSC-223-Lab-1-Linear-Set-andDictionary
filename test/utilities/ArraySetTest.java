@@ -1,3 +1,11 @@
+/**
+* Provides a set of test cases for the ArraySet class we wrote
+*
+* <p>Bugs: none known
+*
+* @author Sam Luck-Leonard and Mason Taylor
+* @date 1/17/2023
+*/
 package utilities;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -520,7 +528,7 @@ class ArraySetTest {
 	}
 
 	@Test
-	void clearEmtpyTest() {
+	void clearEmptyTest() {
 
 		ArraySet<Double> list = new ArraySet<Double>();
 
@@ -574,7 +582,7 @@ class ArraySetTest {
 
 	@Test
 	void getStressTest() {
-
+		//testing the get method through adding a significant amount of doubles to the set
 		ArraySet<Double> list = new ArraySet<Double>();
 
 		for(Double i = 0.0; i < 100; i++) {
@@ -595,7 +603,7 @@ class ArraySetTest {
 
 	@Test
 	void setEmptyTest() {
-
+		//testing passing an empty set
 		ArraySet<Double> list = new ArraySet<Double>();
 
 		assertThrows(IndexOutOfBoundsException.class, () -> {list.set(0, 1.0); });
@@ -604,7 +612,7 @@ class ArraySetTest {
 
 	@Test
 	void setTest() {
-
+		//testing the ability to set a value at a given index to a different value
 		ArraySet<Double> list = new ArraySet<Double>();
 
 		list.add(0.0);
@@ -787,7 +795,7 @@ class ArraySetTest {
 		}
 
 	}
-
+	@Test
 	void removeAtIndexTest() {
 
 		ArraySet<Double> list = new ArraySet<Double>();
@@ -801,6 +809,18 @@ class ArraySetTest {
 		list.remove(1);
 
 		assertEquals(2.0,list.get(1));
+	}
+	
+	@Test
+	void stringBaseTest() {
+		//Basic test using Strings
+		ArraySet<String> list = new ArraySet<String>();
+		
+		list.add("Devin");
+		list.add("Jack");
+		list.add("Alfonzo");
+		
+		assertEquals(3, list.size());
 	}
 
 }

@@ -1,3 +1,11 @@
+/**
+* Provides a set of test cases for the ParallelArrayDictionary class we wrote
+*
+* <p>Bugs: none known
+*
+* @author Sam Luck-Leonard and Mason Taylor
+* @date 1/17/2023
+*/
 package utilities;
 
 import static org.junit.jupiter.api.Assertions.*;
