@@ -286,13 +286,6 @@ class ParallelArrayDictionaryTest {
 	}
 	
 	@Test
-	void putAll() {
-		
-		// I don't know how to test this yet
-		
-	}
-	
-	@Test
 	void clearEmptyTest() {
 		
 		ParallelArrayDictionary<Integer, Double> dict = 
@@ -326,7 +319,11 @@ class ParallelArrayDictionaryTest {
 	
 	@Test
 	void putAllTest() {
+		ParallelArrayDictionary<Integer, Double> dict = 
+				new ParallelArrayDictionary<Integer, Double>();
 		
+	
 	}
+
 
 }

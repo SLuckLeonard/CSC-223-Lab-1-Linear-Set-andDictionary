@@ -651,7 +651,7 @@ class ArraySetTest {
 		}
 		
 		
-		while (list.isEmpty() == false) {
+		while (!list.isEmpty()) {
 			
 			list.remove(0);
 			
