@@ -61,7 +61,11 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public boolean add(E e) {
+		
+		if(_list.contains(e)) return false;
+		
 		_list.add(e);
+		
 		return true;
 	}
 	@Override
@@ -81,7 +85,13 @@ public class ArraySet<E> implements List<E>, Set<E>
 	}
 	@Override
 	public boolean addAll(int index, Collection<? extends E> c) {
+		for(E item : c) {
+			
+			if(_list.contains(item)) return false;
+			
+		}
 		_list.addAll(index, c);
+		
 		return true;
 	}
 	@Override
