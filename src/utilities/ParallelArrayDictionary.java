@@ -1,3 +1,11 @@
+/**
+* Creates a Parallel Array Dictionary with the fully implemented dictionary interface
+*
+* <p>Bugs: none known
+*
+* @author Sam Luck-Leonard and Mason Taylor
+* @date 1/17/2023
+*/
 package utilities;
 
 import java.util.ArrayList;
