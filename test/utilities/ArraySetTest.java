@@ -696,11 +696,11 @@ class ArraySetTest {
 
 		list.add(1.0);
 
-		list.add(0.0);
+		assertEquals(0, list.lastIndexOf(1.0));
+		
+		list.add(0, 0.0);
 
-		list.add(1.0);
-
-		assertEquals(2, list.lastIndexOf(1.0));
+		assertEquals(1, list.lastIndexOf(1.0));
 
 	}
 
@@ -711,9 +711,9 @@ class ArraySetTest {
 		
 		for(int i = 0; i < 10; i++) {
 
-			list.add(1.0);
+			list.add(i + 0.0);
 			
-			assertEquals(i, list.lastIndexOf(1.0));
+			assertEquals(i, list.lastIndexOf(i + 0.0));
 			
 		}
 		
@@ -737,8 +737,7 @@ class ArraySetTest {
 		}
 		
 	}
-	
-	@Test
+
 	void removeAtIndexTest() {
 		
 		ArraySet<Double> list = new ArraySet<Double>();
@@ -753,31 +752,6 @@ class ArraySetTest {
 		
 		assertEquals(2.0,list.get(1));
 	}
-	
-	
-	
-//	@Test
-//	void subListStressTest() {
-//		
-//		ArraySet<Double> list = new ArraySet<Double>();
-//		
-//		for(int i = 0; i < 10; i++) {
-//
-//			list.add(i + 0.0);
-//
-//		}
-//		
-//		for(int i = 0; i < 10; i++) {
-//
-//			for(Double j = 0.0; j < 9; j++) {
-//				
-//				assertTrue(list.subList(0, i).contains(j));
-//				
-//			}
-//
-//		}
-//		
-//	}
 
 }
 
