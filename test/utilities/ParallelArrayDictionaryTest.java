@@ -29,6 +29,8 @@ class ParallelArrayDictionaryTest {
 			for(int j = 0; j < i; j++) {
 
 				assertEquals(j, dict.size());
+				
+				// fetched
 
 			}
 
