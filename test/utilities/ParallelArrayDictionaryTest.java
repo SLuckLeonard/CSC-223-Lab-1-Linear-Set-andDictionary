@@ -353,7 +353,7 @@ class ParallelArrayDictionaryTest {
 			
 		}
 	}
-	
+	//ensuring that Strings also work
 	@Test
 	void stringBaseTest() {
 		ParallelArrayDictionary<Integer, String> dict = 
@@ -364,6 +364,27 @@ class ParallelArrayDictionaryTest {
 		dict.put(40, "Terrance");
 		
 		assertEquals(3, dict.size());
+	}
+	
+	@Test
+	void valuesTest() {
+		ParallelArrayDictionary<Integer, Double> dict = 
+				new ParallelArrayDictionary<Integer, Double>();
+		
+		for(int i = 0; i < 100; i++)
+		{
+			dict.put(i, i + 0.0);
+		}
+		
+		assertTrue(dict._Values.containsAll(dict.values()));
+	}
+	
+	@Test
+	void valuesEmptyTest() {
+		ParallelArrayDictionary<Integer, Double> dict = 
+				new ParallelArrayDictionary<Integer, Double>();
+		
+		assertEquals(0, dict.values().size());
 	}
 
 }

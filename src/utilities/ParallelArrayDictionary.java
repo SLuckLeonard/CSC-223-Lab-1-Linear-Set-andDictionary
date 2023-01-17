@@ -65,6 +65,7 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 		return _Values.get(_Keys.indexOf(key));
 	}
 
+	//method to add a key and value
 	@Override
 	public Value put(Key key, Value value) {
 
