@@ -414,11 +414,39 @@ class ArraySetTest {
 	}
 	
 	@Test
-	void addAllIndexOutOfBoundsIndex() {
+	void addAllIndexOutOfBoundsIndexTest() {
 		
 		ArraySet<Double> list = new ArraySet<Double>();
 		
 		ArrayList<Double> thingsIBeAddinFr = new ArrayList<Double>();
+		
+		thingsIBeAddinFr.add(0.0);
+		
+		assertThrows(IndexOutOfBoundsException.class, () -> {list.addAll(1, thingsIBeAddinFr);});
+		
+	}
+	
+	@Test
+	void addAllAlreadyThereTest() {
+		
+		ArraySet<Double> list = new ArraySet<Double>();
+
+		for(Double i = 0.0; i < 100; i++) {
+			
+			list.add(i);
+			
+		}
+
+		ArrayList<Double> thingsIBeAddinFr = new ArrayList<Double>();
+
+		for(Double i = 0.0; i < 100; i++) {
+
+			thingsIBeAddinFr.add(i);
+
+		}
+
+		assertFalse(list.addAll(0, thingsIBeAddinFr));
+		
 	}
 
 	@Test
