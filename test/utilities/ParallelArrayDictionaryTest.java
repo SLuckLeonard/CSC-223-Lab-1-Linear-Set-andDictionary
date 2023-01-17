@@ -353,5 +353,17 @@ class ParallelArrayDictionaryTest {
 			
 		}
 	}
+	
+	@Test
+	void stringBaseTest() {
+		ParallelArrayDictionary<Integer, String> dict = 
+				new ParallelArrayDictionary<Integer, String>();
+		
+		dict.put(90, "James");
+		dict.put(85, "Jamal");
+		dict.put(40, "Terrance");
+		
+		assertEquals(3, dict.size());
+	}
 
 }
