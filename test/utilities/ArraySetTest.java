@@ -10,6 +10,8 @@ package utilities;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 class ArraySetTest {
@@ -19,7 +21,7 @@ class ArraySetTest {
 		ArraySet<Double> list = new ArraySet<Double>();
 
 		assertEquals(0, list.size());
-		
+
 	}
 
 	@Test
@@ -30,7 +32,7 @@ class ArraySetTest {
 		list.add(10.0);
 
 		assertEquals(1, list.size());
-		
+
 	}
 
 	@Test
@@ -372,6 +374,54 @@ class ArraySetTest {
 	}
 
 	@Test
+	void addAllIndexEmptyTest() {
+
+		ArraySet<Double> list = new ArraySet<Double>();
+
+		ArrayList<Double> thingsIBeAddinFr = new ArrayList<Double>();
+
+		for(Double i = 0.0; i < 100; i++) {
+
+			thingsIBeAddinFr.add(i);
+
+		}
+
+		list.addAll(0, thingsIBeAddinFr);
+
+		assertTrue(list.containsAll(thingsIBeAddinFr));
+
+	}
+
+	@Test
+	void addAllIndexTest() {
+
+		ArraySet<Double> list = new ArraySet<Double>();
+
+		list.add(0.0);
+
+		ArrayList<Double> thingsIBeAddinFr = new ArrayList<Double>();
+
+		for(Double i = 0.0; i < 100; i++) {
+
+			thingsIBeAddinFr.add(i);
+
+		}
+
+		list.addAll(0, thingsIBeAddinFr);
+
+		assertTrue(list.containsAll(thingsIBeAddinFr));
+
+	}
+	
+	@Test
+	void addAllIndexOutOfBoundsIndex() {
+		
+		ArraySet<Double> list = new ArraySet<Double>();
+		
+		ArrayList<Double> thingsIBeAddinFr = new ArrayList<Double>();
+	}
+
+	@Test
 	void removeAllEmptyTest() {
 
 		ArraySet<Double> list = new ArraySet<Double>();
@@ -652,16 +702,16 @@ class ArraySetTest {
 		ArraySet<Double> list = new ArraySet<Double>();
 		//adding in a set of variables to be removed
 		for(Double i = 0.0; i < 10; i++) {
-			
+
 			list.add(i);
-		
+
 		}
-		
+
 		//removing the items one by one through index 0 
 		while (!list.isEmpty()) {
-			
+
 			list.remove(0);
-			
+
 		}
 		assertTrue(list.isEmpty());
 
@@ -705,7 +755,7 @@ class ArraySetTest {
 		list.add(1.0);
 
 		assertEquals(0, list.lastIndexOf(1.0));
-		
+
 		list.add(0, 0.0);
 
 		assertEquals(1, list.lastIndexOf(1.0));
@@ -716,48 +766,48 @@ class ArraySetTest {
 	void lastIndexOfStressTest() {
 
 		ArraySet<Double> list = new ArraySet<Double>();
-		
+
 		for(int i = 0; i < 10; i++) {
 
 			list.add(i + 0.0);
-			
+
 			assertEquals(i, list.lastIndexOf(i + 0.0));
-			
+
 		}
-		
+
 	}
-	
+
 	@Test
 	void subListTest() {
-		
+
 		ArraySet<Double> list = new ArraySet<Double>();
-		
+
 		list.add(0.0);
-		
+
 		list.add(1.0);
-		
+
 		list.add(2.0);
-		
+
 		for(Double i = 0.0; i < 2.0; i++) {
-			
+
 			assertTrue(list.subList(0, 2).contains(i));
-			
+
 		}
-		
+
 	}
 	@Test
 	void removeAtIndexTest() {
-		
+
 		ArraySet<Double> list = new ArraySet<Double>();
-		
+
 		list.add(0.2);
-		
+
 		list.add(0.6);
-		
+
 		list.add(2.0);
-		
+
 		list.remove(1);
-		
+
 		assertEquals(2.0,list.get(1));
 	}
 	
