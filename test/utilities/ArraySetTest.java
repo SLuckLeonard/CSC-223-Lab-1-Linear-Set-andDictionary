@@ -8,7 +8,6 @@ class ArraySetTest {
 
 	@Test
 	void sizeEmptyTest() {
-		//push moment
 		ArraySet<Double> list = new ArraySet<Double>();
 
 		assertEquals(0, list.size());
@@ -587,7 +586,7 @@ class ArraySetTest {
 
 		for(Double i = 1.0; i < 10; i++) {
 
-			list.contains(i);
+			assertTrue(list.contains(i));
 
 		}
 
@@ -643,14 +642,14 @@ class ArraySetTest {
 	void removeIndexStressTest() {
 
 		ArraySet<Double> list = new ArraySet<Double>();
-
+		//adding in a set of variables to be removed
 		for(Double i = 0.0; i < 10; i++) {
 			
 			list.add(i);
 		
 		}
 		
-		
+		//removing the items one by one through index 0 
 		while (!list.isEmpty()) {
 			
 			list.remove(0);
