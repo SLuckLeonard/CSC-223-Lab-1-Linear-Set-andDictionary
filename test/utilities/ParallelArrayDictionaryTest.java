@@ -1,11 +1,11 @@
 /**
-* Provides a set of test cases for the ParallelArrayDictionary class we wrote
-*
-* <p>Bugs: none known
-*
-* @author Sam Luck-Leonard and Mason Taylor
-* @date 1/17/2023
-*/
+ * Provides a set of test cases for the ParallelArrayDictionary class we wrote
+ *
+ * <p>Bugs: none known
+ *
+ * @author Sam Luck-Leonard and Mason Taylor
+ * @date 1/17/2023
+ */
 package utilities;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -39,7 +39,7 @@ class ParallelArrayDictionaryTest {
 
 			dict.put(i, 0.0);
 
-				assertEquals(i + 1, dict.size());
+			assertEquals(i + 1, dict.size());
 
 		}
 
@@ -225,16 +225,16 @@ class ParallelArrayDictionaryTest {
 
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
-		
+
 		dict.put(0, 0.0);
-		
+
 		assertEquals(0, dict.get(0));
 
 	}
-	
+
 	@Test
 	void putTestStress() {
-		
+
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
 
@@ -249,120 +249,146 @@ class ParallelArrayDictionaryTest {
 			assertEquals(i + 0.0, dict.get(i));
 
 		}
-		
+
 	}
-	
+
 	@Test
 	void removeEmptyTest() {
-		
+
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
-		
+
 		assertThrows(IndexOutOfBoundsException.class, () -> { dict.remove(0); });
-		
+
 	}
-	
+
 	@Test
 	void removeTest() {
-		
+
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
-		
+
 		dict.put(0, 0.0);
-		
+
 		dict.remove(0);
-		
+
 		assertTrue(dict.isEmpty());
-		
+
 	}
-	
+
 	@Test
 	void removeStressTest() {
-		
+
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
-		
-		for(int i = 0; i < 100; i++) {
-			
-			dict.put(i, i + 0.0);
-			
-		}
-		
-		for(int i = 0; i < 100; i++) {
-			
-			dict.remove(i);
-			
-		}
-		
-		assertTrue(dict.isEmpty());
-		
-	}
-	
-	@Test
-	void clearEmptyTest() {
-		
-		ParallelArrayDictionary<Integer, Double> dict = 
-				new ParallelArrayDictionary<Integer, Double>();
-		
-		dict.clear();
-		
-		assertTrue(dict.isEmpty());
-		
-	}
-	
-	@Test
-	void clearStressTest() {
-		
-		ParallelArrayDictionary<Integer, Double> dict = 
-				new ParallelArrayDictionary<Integer, Double>();
-		
+
 		for(int i = 0; i < 100; i++) {
 
 			dict.put(i, i + 0.0);
-			
+
+		}
+
+		for(int i = 0; i < 100; i++) {
+
+			dict.remove(i);
+
+		}
+
+		assertTrue(dict.isEmpty());
+
+	}
+
+	@Test
+	void clearEmptyTest() {
+
+		ParallelArrayDictionary<Integer, Double> dict = 
+				new ParallelArrayDictionary<Integer, Double>();
+
+		dict.clear();
+
+		assertTrue(dict.isEmpty());
+
+	}
+
+	@Test
+	void clearStressTest() {
+
+		ParallelArrayDictionary<Integer, Double> dict = 
+				new ParallelArrayDictionary<Integer, Double>();
+
+		for(int i = 0; i < 100; i++) {
+
+			dict.put(i, i + 0.0);
+
 			assertFalse(dict.isEmpty());
 
 		}
-		
+
 		dict.clear();
-		
+
 		assertTrue(dict.isEmpty());
-		
+
 	}
-	
+
 	@Test
 	void putAllTest() {
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
-		
+
 		Hashtable<Integer, Double> doct = new Hashtable<Integer, Double>();
-		
+
 		for(int i = 0; i < 100; i++) {
-			
+
 			doct.put(i, i + 0.0);
-			
+
 		}
-		
+
 		dict.putAll(doct);
-		
+
 		for(int i = 0; i < 100; i++) {
-			
+
 			assertTrue(dict.containsKey(i));
-			
+
 			assertTrue(dict.containsValue(i + 0.0));
-			
+
 		}
 	}
+
+	@Test
+	void keySetTest() {
+
+		ParallelArrayDictionary<Integer, Double> dict = 
+				new ParallelArrayDictionary<Integer, Double>();
+
+		for(int i = 0; i < 100; i++) {
+
+			dict.put(i, i + 0.0);
+
+		}
+		
+		assertTrue(dict._Keys.containsAll(dict.keySet()));
+		
+	}
 	
+	@Test
+	void keySetEmptyTest() {
+		
+		ParallelArrayDictionary<Integer, Double> dict = 
+				new ParallelArrayDictionary<Integer, Double>();
+		
+		assertEquals(0, dict.keySet().size());
+		
+	}
+
 	@Test
 	void stringBaseTest() {
 		ParallelArrayDictionary<Integer, String> dict = 
 				new ParallelArrayDictionary<Integer, String>();
-		
+
 		dict.put(90, "James");
 		dict.put(85, "Jamal");
 		dict.put(40, "Terrance");
-		
+
 		assertEquals(3, dict.size());
 	}
 
