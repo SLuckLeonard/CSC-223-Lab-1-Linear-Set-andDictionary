@@ -745,7 +745,7 @@ class ArraySetTest {
 		}
 		
 	}
-
+	@Test
 	void removeAtIndexTest() {
 		
 		ArraySet<Double> list = new ArraySet<Double>();
@@ -759,6 +759,18 @@ class ArraySetTest {
 		list.remove(1);
 		
 		assertEquals(2.0,list.get(1));
+	}
+	
+	@Test
+	void stringBaseTest() {
+		//Basic test using Strings
+		ArraySet<String> list = new ArraySet<String>();
+		
+		list.add("Devin");
+		list.add("Jack");
+		list.add("Alfonzo");
+		
+		assertEquals(3, list.size());
 	}
 
 }
