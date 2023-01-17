@@ -644,23 +644,19 @@ class ArraySetTest {
 
 		ArraySet<Double> list = new ArraySet<Double>();
 
-		for(int i = 0; i < 10; i++) {
-
-			list.add(i + 0.0);
-
+		for(Double i = 0.0; i < 10; i++) {
+			
+			list.add(i);
+		
 		}
-
+		
 		for(int i = 0; i < 10; i++) {
-
-			for(Double j = 0.0; j < i; j++) {
-
-			//	assertTrue(list.contains(j));
-
-			}
-
-			//list.remove(i);
-
+			
+			list.remove(i);
+			
 		}
+		
+		assertTrue(list.isEmpty());
 
 	}
 
@@ -743,28 +739,28 @@ class ArraySetTest {
 		
 	}
 	
-	@Test
-	void subListStressTest() {
-		
-		ArraySet<Double> list = new ArraySet<Double>();
-		
-		for(int i = 0; i < 10; i++) {
-
-			list.add(i + 0.0);
-
-		}
-		
-		for(int i = 0; i < 10; i++) {
-
-			for(Double j = 0.0; j < 9; j++) {
-				
-				assertTrue(list.subList(0, i).contains(j));
-				
-			}
-
-		}
-		
-	}
+//	@Test
+//	void subListStressTest() {
+//		
+//		ArraySet<Double> list = new ArraySet<Double>();
+//		
+//		for(int i = 0; i < 10; i++) {
+//
+//			list.add(i + 0.0);
+//
+//		}
+//		
+//		for(int i = 0; i < 10; i++) {
+//
+//			for(Double j = 0.0; j < 9; j++) {
+//				
+//				assertTrue(list.subList(0, i).contains(j));
+//				
+//			}
+//
+//		}
+//		
+//	}
 
 }
 

@@ -73,11 +73,11 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 	@Override
 	public Value remove(Object key) {
 
-		_Keys.remove(key);
-
 		Value temp = _Values.get(_Keys.indexOf(key));
-
+		
 		_Values.remove(_Keys.indexOf(key));
+		
+		_Keys.remove(key);
 
 		return temp;
 

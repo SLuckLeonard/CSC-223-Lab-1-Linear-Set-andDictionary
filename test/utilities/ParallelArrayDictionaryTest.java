@@ -26,13 +26,7 @@ class ParallelArrayDictionaryTest {
 
 			dict.put(i, 0.0);
 
-			for(int j = 0; j < i; j++) {
-
-				assertEquals(j, dict.size());
-				
-				// fetched
-
-			}
+				assertEquals(i + 1, dict.size());
 
 		}
 
@@ -177,7 +171,7 @@ class ParallelArrayDictionaryTest {
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
 
-		assertThrows(NullPointerException.class, () -> { dict.get(0); });
+		assertEquals(null, dict.get(0));
 
 	}
 
@@ -251,7 +245,7 @@ class ParallelArrayDictionaryTest {
 		ParallelArrayDictionary<Integer, Double> dict = 
 				new ParallelArrayDictionary<Integer, Double>();
 		
-		assertThrows(NullPointerException.class, () -> { dict.remove(0); });
+		assertThrows(IndexOutOfBoundsException.class, () -> { dict.remove(0); });
 		
 	}
 	
@@ -276,15 +270,15 @@ class ParallelArrayDictionaryTest {
 				new ParallelArrayDictionary<Integer, Double>();
 		
 		for(int i = 0; i < 100; i++) {
-
+			
 			dict.put(i, i + 0.0);
-
+			
 		}
 		
 		for(int i = 0; i < 100; i++) {
-
+			
 			dict.remove(i);
-
+			
 		}
 		
 		assertTrue(dict.isEmpty());
