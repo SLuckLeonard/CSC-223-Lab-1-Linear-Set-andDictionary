@@ -650,12 +650,12 @@ class ArraySetTest {
 		
 		}
 		
-		for(int i = 0; i < 10; i++) {
+		
+		while (list.isEmpty() == false) {
 			
-			list.remove(i);
+			list.remove(0);
 			
 		}
-		
 		assertTrue(list.isEmpty());
 
 	}
@@ -738,6 +738,24 @@ class ArraySetTest {
 		}
 		
 	}
+	
+	@Test
+	void removeAtIndexTest() {
+		
+		ArraySet<Double> list = new ArraySet<Double>();
+		
+		list.add(0.2);
+		
+		list.add(0.6);
+		
+		list.add(2.0);
+		
+		list.remove(1);
+		
+		assertEquals(2.0,list.get(1));
+	}
+	
+	
 	
 //	@Test
 //	void subListStressTest() {

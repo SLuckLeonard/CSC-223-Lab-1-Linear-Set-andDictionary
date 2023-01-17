@@ -323,5 +323,10 @@ class ParallelArrayDictionaryTest {
 		assertTrue(dict.isEmpty());
 		
 	}
+	
+	@Test
+	void putAllTest() {
+		
+	}
 
 }
