@@ -34,7 +34,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 		
 		for(E item : collection) {
 			
-			_list.add(item);
+			add(item);
 			
 		}
 		
@@ -88,17 +88,14 @@ public class ArraySet<E> implements List<E>, Set<E>
 	@Override
 	public boolean remove(Object o) {
 		
-		_list.remove(o);
-		
-		return true;
+		return _list.remove(o);
 		
 	}
 	@Override
 	public boolean containsAll(Collection<?> c) {
 		
-		_list.containsAll(c);
+		return _list.containsAll(c);
 		
-		return true;
 		
 	}
 	@Override
@@ -107,7 +104,7 @@ public class ArraySet<E> implements List<E>, Set<E>
 		for(E item: c) {
 			
 			if(_list.contains(item)) return false;
-			
+			//add boolean for if its being added
 		}
 		_list.addAll(c);
 		
@@ -131,17 +128,13 @@ public class ArraySet<E> implements List<E>, Set<E>
 	@Override
 	public boolean removeAll(Collection<?> c) {
 		
-		_list.removeAll(c);
-		
-		return true;
+		return _list.removeAll(c);
 		
 	}
 	@Override
 	public boolean retainAll(Collection<?> c) {
 		
-		_list.retainAll(c);
-		
-		return true;
+		return _list.retainAll(c);
 		
 	}
 	@Override

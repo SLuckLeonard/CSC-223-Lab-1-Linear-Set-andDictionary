@@ -28,7 +28,7 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 		_Values = new ArrayList<Value>();
 
-		for(int i = 0; i < keys.size(); i++) {
+		for(int i = 0; i < keys.size() && i < values.size(); i++) {
 
 			this.put(keys.get(i), values.get(i));
 		}
@@ -93,6 +93,8 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 	@Override
 	public Value remove(Object key) {
 
+		//call _Keys.indexOf(key)) once here
+		
 		Value temp = _Values.get(_Keys.indexOf(key));
 		
 		_Values.remove(_Keys.indexOf(key));
@@ -126,15 +128,7 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 	@Override
 	public Set<Key> keySet() {
 		//creating a keySet of keys from _Keys to return
-		ArraySet<Key> keySet = new ArraySet<Key>();
-
-		for(Key key: _Keys) {
-
-			keySet.add(key);
-
-		}
-
-		return keySet;
+		return _Keys;
 
 	}
 
@@ -147,7 +141,7 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public Set<Entry<Key, Value>> entrySet() {
-
+		//create set object filter through and go through keys and values loop through manually create set
 		return this.entrySet();
 		
 	}
