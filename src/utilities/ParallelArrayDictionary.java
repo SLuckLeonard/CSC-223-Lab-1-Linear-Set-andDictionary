@@ -41,28 +41,39 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 
 	@Override
 	public int size() {
+		
 		return _Values.size();
+		
 	}
 
 	@Override
 	public boolean isEmpty() {
+		
 		return _Values.isEmpty();
+		
 	}
 
 	@Override
 	public boolean containsKey(Object key) {
+		
 		return _Keys.contains(key);
+		
 	}
 
 	@Override
 	public boolean containsValue(Object value) {
+		
 		return _Values.contains(value);
+		
 	}
 
 	@Override
 	public Value get(Object key) {
+		
 		if (!containsKey(key)) return null;
+		
 		return _Values.get(_Keys.indexOf(key));
+		
 	}
 
 	//method to add a key and value
@@ -95,8 +106,8 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 	@Override
 	public void putAll(Map<? extends Key, ? extends Value> m) {
 
-		for (Entry<? extends Key, ? extends Value> e: m.entrySet())
-		{
+		for (Entry<? extends Key, ? extends Value> e: m.entrySet()){
+			
 			put(e.getKey(),e.getValue());
 
 		}
@@ -131,12 +142,14 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value>
 	public Collection<Value> values() {
 
 		return _Values;
+		
 	}
 
 	@Override
 	public Set<Entry<Key, Value>> entrySet() {
 
 		return this.entrySet();
+		
 	}
 
 }
